@@ -1,0 +1,48 @@
+.title {
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    font-family: Arial;
+    margin-top: 50px;
+}
+
+.header {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.box-desc {
+
+}
+
+.box-input {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}
+
+.box-button {
+    width: 60px;
+    height: 25px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.result {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.content ul {
+    margin: 0 auto;
+}
+
+.content li {
+    padding-left: 10px;
+    font-size: 20px;
+    list-style: none;
+    width: -moz-fit-content;
+}

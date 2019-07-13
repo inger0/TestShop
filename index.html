@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body style="background: aquamarine">
+<div class="title">
+    Welcome To My Shop
+</div>
+
+<div class="header">
+    <div>
+        <span># Of Boxes Ordered:</span>
+        <input class="box-input" id="number" value="10" type="text"/>
+        <button class="box-button" id="box-button">Enter</button>
+    </div>
+</div>
+
+<div class="content">
+    <ul id="result" class="result">
+    </ul>
+</div>
+</body>
+
+<script>
+    document.getElementById("box-button").onclick = function () {
+        let http = new XMLHttpRequest();
+        let number = document.getElementById("number").value;
+
+        if (number >= 0) {
+            let url = "./api/shop.php?number=" + number;
+            http.open("GET", url, false);
+            http.send(null);
+            document.getElementById("result").innerHTML = "";
+
+            let html = "";
+            if (http.readyState == 4 && http.status == 200) {
+                /*成功回调函数*/
+
+                let result = eval('(' + http.responseText + ')');
+                let l = result.length;
+                for (let i = 0; i < l; i++) {
+                    html += "<li>" + result[i] + "</li>"
+
+                    console.log(html);
+                }
+                document.getElementById("result").innerHTML = html;
+            } else {
+                /*失败回调函数*/
+            }
+        }
+    };
+</script>
+</html>
