@@ -23,6 +23,10 @@ function fillBox($index)
     while ($number < 12 || $weight < 8) {
         $weight += rand(55, 75) / 100;
 
+        if ($weight > 8) {
+            break;
+        }
+
         $number++;
     }
 
